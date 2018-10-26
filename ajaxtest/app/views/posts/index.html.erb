@@ -1,1 +1,8 @@
 <h1>Made it to Index for Posts</h1>
+
+
+<%= form_for(@post, :url => new_post_path) do |f| %>
+  <%= f.text_area :title, placeholder: "Title of Post" %>
+  <%= f.text_area :content, placeholder: "Content for Post" %>
+  <p><%= f.submit %></p>
+  <% end %>
