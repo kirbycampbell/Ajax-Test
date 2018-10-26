@@ -11,16 +11,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.build(posts_params)
+    @post = Post.new(posts_params)
+    if @post.save
+    end
   end
 
   def new
-    render :index
+    @post = Post.new
+    redirect_to :index
   end
 
   private
 
   def posts_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:title, :content)
   end
 end
