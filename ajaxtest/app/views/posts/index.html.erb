@@ -1,25 +1,14 @@
 <h1>Made it to Index for Posts</h1>
 
 
-<%= form_for(@post, :url => posts_path) do |f| %>
+<%= form_for(@post) do |f| %>
   <%= f.text_area :title, placeholder: "Title of Post" %>
   <%= f.text_area :content, placeholder: "Content for Post" %>
   <p><%= f.submit %></p>
   <% end %>
+  
   <h3>All Posts</h3>
     <% @posts.each do |post| %>
       <p><%= post.title %></p>
       <p><%= post.content %></p>
     <% end %>
-
-  <h2>Repo Test</h2>
-  <div>
-    <h3>Repositories</h3>
-    <a href="#" onclick="getRepositories()">Get Repositories</a>
-    <div id="repositories"></div>
-  </div>
-
-  <div>
-    <h3>Commits</h3>
-    <div id="commits"></div>
-  </div>
